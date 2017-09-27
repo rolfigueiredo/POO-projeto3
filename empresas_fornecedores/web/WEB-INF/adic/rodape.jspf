@@ -1,0 +1,54 @@
+<%@ page pageEncoding="UTF-8" %>
+
+<!-- Javascript files-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.cookie.js"> </script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/front.js"></script>
+<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+<script src="jquery.cpfcnpj.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#cpf').mask('000.000.000-00');
+        $('#cnpj').mask('00.000.000/0000-00');
+
+        $('#tipo_cad > .format-box-forms-ini').hide();
+
+        $('#tipo_cad .i-checks').click(function () {
+            $('#tipo_cad > .format-box-forms-ini').hide();
+        $(this).next().toggle('slow, 1000');
+        });
+
+        $('.validate').cpf({
+            mask: false,
+            validate: 'cpf',
+            event: 'focusout',
+            handler: '#cpf',
+            ifValid: function (input) {input.removeClass("error"); },
+            ifInvalid: function (input) {input.addClass("error"); }
+        });
+
+        $('.validate').cnpj({
+            mask: false,
+            validate: 'cnpj',
+            event: 'focusout',
+            handler: '#cnpj',
+            ifValid: function (input) {input.removeClass("error"); },
+            ifInvalid: function (input) {input.addClass("error"); }
+        });
+    });
+</script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+<script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>

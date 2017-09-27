@@ -1,0 +1,34 @@
+<%@ page pageEncoding="UTF-8" %>
+<nav class="side-navbar">
+    <ul class="list-unstyled">
+        <li class="active"> <a href="painel.php"> <i class="icon-home"></i>Dashboard</a></li>
+        <li>
+            <a href="#menu-empserv" aria-expanded="false" data-toggle="collapse"> <i class="icon-form"></i>CLIENTES</a>
+            <ul id="menu-empserv" class="collapse list-unstyled">
+                <li><a href="cli-cad.jsp">Cadastrar</a></li>
+                <li><a href="clientes.jsp">Manutenção</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#menu-users" aria-expanded="false" data-toggle="collapse"> <i class="icon-user"></i>FORNECEDORES</a>
+            <ul id="menu-users" class="collapse list-unstyled">
+                <li><a href="forn-cad.jsp">Cadastrar</a></li>
+                <li><a href="fornecedores.jsp">Manutenção</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="sidebar-header d-flex align-items-center">
+        <div class="avatar"><img src="img/rf.jpg" alt="..." class="img-fluid rounded-circle"></div>
+        <div class="title">
+            <h1 class="h4">Rodrigo Figueiredo</h1>
+            <p>Back End</p>
+        </div>
+    </div>
+    <div class="sidebar-header d-flex align-items-center">
+        <div class="avatar"><img src="img/vb.jpg" alt="..." class="img-fluid rounded-circle"></div>
+        <div class="title">
+            <h1 class="h4">Victor Hugo da Silva Burghi</h1>
+            <p>Front End</p>
+        </div>
+    </div>
+</nav>
