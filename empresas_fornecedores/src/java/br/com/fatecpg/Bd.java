@@ -15,9 +15,15 @@ public class Bd {
     
     private static double sizeToRefresh = initialSize * loadFactor;
     
-    private static Map<Integer,Cliente> contatos;
-    public static Map<Integer,Cliente> getContatos(){
-        if (contatos==null) contatos = new HashMap<Integer,Cliente>();
-        return contatos;
+    private static Map<String,Cliente> clientes;
+    public static Map<String,Cliente> getClientes(){
+        if (clientes==null) clientes = new HashMap<String,Cliente>();
+        return clientes;
+    }
+    
+    private static Map<String,Fornecedor> fornecedores;
+    public static Map<String,Fornecedor> getFornecedores(){
+        if (fornecedores==null) fornecedores = new HashMap<String,Fornecedor>();
+        return fornecedores;
     }
 }

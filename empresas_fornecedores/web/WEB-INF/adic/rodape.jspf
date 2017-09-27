@@ -8,38 +8,21 @@
 <script src="js/jquery.validate.min.js"></script>
 <script src="js/front.js"></script>
 <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
-<script src="jquery.cpfcnpj.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#cpf').mask('000.000.000-00');
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#cpf').mask('000.000.000-00');
+        $('#rg').mask('00.000.000-0');
         $('#cnpj').mask('00.000.000/0000-00');
-
-        $('#tipo_cad > .format-box-forms-ini').hide();
-
-        $('#tipo_cad .i-checks').click(function () {
-            $('#tipo_cad > .format-box-forms-ini').hide();
-        $(this).next().toggle('slow, 1000');
+        $('#telefone').mask('(00) 0000-00009');
+        $('#telefone').blur(function(event) {
+           if($(this).val().length == 15){ // Celular com 9 dígitos + 2 dígitos DDD e 4 da máscara
+              $('#telefone').mask('(00) 00000-0009');
+           } else {
+              $('#telefone').mask('(00) 0000-00009');
+           }
         });
-
-        $('.validate').cpf({
-            mask: false,
-            validate: 'cpf',
-            event: 'focusout',
-            handler: '#cpf',
-            ifValid: function (input) {input.removeClass("error"); },
-            ifInvalid: function (input) {input.addClass("error"); }
-        });
-
-        $('.validate').cnpj({
-            mask: false,
-            validate: 'cnpj',
-            event: 'focusout',
-            handler: '#cnpj',
-            ifValid: function (input) {input.removeClass("error"); },
-            ifInvalid: function (input) {input.addClass("error"); }
-        });
+        $('#cep').mask('00000-000');
     });
 </script>
 

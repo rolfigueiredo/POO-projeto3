@@ -1,17 +1,17 @@
 <%@ page pageEncoding="UTF-8" %>
 <nav class="side-navbar">
     <ul class="list-unstyled">
-        <li class="active"> <a href="painel.php"> <i class="icon-home"></i>Dashboard</a></li>
+        <li class="active"> <a href="painel.jsp"> <i class="icon-home"></i>Dashboard</a></li>
         <li>
-            <a href="#menu-empserv" aria-expanded="false" data-toggle="collapse"> <i class="icon-form"></i>CLIENTES</a>
-            <ul id="menu-empserv" class="collapse list-unstyled">
+            <a href="#menu-cli" aria-expanded="false" data-toggle="collapse"> <i class="icon-form"></i>CLIENTES</a>
+            <ul id="menu-cli" class="collapse list-unstyled">
                 <li><a href="cli-cad.jsp">Cadastrar</a></li>
                 <li><a href="clientes.jsp">Manutenção</a></li>
             </ul>
         </li>
         <li>
-            <a href="#menu-users" aria-expanded="false" data-toggle="collapse"> <i class="icon-user"></i>FORNECEDORES</a>
-            <ul id="menu-users" class="collapse list-unstyled">
+            <a href="#menu-forn" aria-expanded="false" data-toggle="collapse"> <i class="icon-user"></i>FORNECEDORES</a>
+            <ul id="menu-forn" class="collapse list-unstyled">
                 <li><a href="forn-cad.jsp">Cadastrar</a></li>
                 <li><a href="fornecedores.jsp">Manutenção</a></li>
             </ul>

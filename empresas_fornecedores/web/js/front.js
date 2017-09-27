@@ -55,28 +55,6 @@ $(document).ready(function () {
         $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
     });
 
-
-    // ------------------------------------------------------- //
-    // Login  form validation
-    // ------------------------------------------------------ //
-    $('#login-form').validate({
-        messages: {
-            loginUsername: 'Por favor, digite seu login',
-            loginPassword: 'Por favor, digite sua senha'
-        }
-    });
-
-    // ------------------------------------------------------- //
-    // Register form validation
-    // ------------------------------------------------------ //
-    $('#register-form').validate({
-        messages: {
-            registerUsername: 'please enter your first name',
-            registerEmail: 'please enter a vaild Email Address',
-            registerPassword: 'please enter your password'
-        }
-    });
-
     // ------------------------------------------------------- //
     // Sidebar Functionality
     // ------------------------------------------------------ //
