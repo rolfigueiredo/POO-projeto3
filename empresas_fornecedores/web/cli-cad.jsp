@@ -39,37 +39,65 @@
                             String estado = request.getParameter("estado");
                             String cep = request.getParameter("cep");
                             
-                            
-                            Cliente c = new Cliente();
-                            c.setNome(nome);
-                            c.setCpf(cpf);
-                            c.setRg(rg);
-                            c.setEmail(email);
-                            c.setTelefone(telefone);
-                            c.setLogradouro(logradouro);
-                            c.setBairro(bairro);
-                            c.setCidade(cidade);
-                            c.setEstado(estado);
-                            c.setCep(cep);
-
-                            Bd.getClientes().put(cpf, c);%>
-                            <section class="tela projects padding-top no-padding-bottom">
-                                <div class="container-fluid">
-                                    <div class="project">
-                                        <div class="row bg-yellow has-shadow">
-                                            <div class="left-col retirar_borda d-flex align-items-center justify-content-between">
-                                                <div class="project-title d-flex align-items-center">
-                                                    <div class="text">
-                                                        <small>Mensagem</small>
-                                                        <h3 class="h4">CADASTRO EFETUADO COM SUCESSO!</h3>
+                            Set<String> chaves = Bd.getClientes().keySet();
+                            int existe=0;
+                            for (String chave : chaves){
+                                if(chave != null){
+                                    Cliente f = Bd.getClientes().get(chave);
+                                    if (f.getCpf().equals(cpf)){
+                                        existe=1;
+                                    }
+                                }
+                            }
+                            if (existe==1){%>
+                                <section class="projects padding-top no-padding-bottom">
+                                    <div class="container-fluid">
+                                        <div class="project">
+                                            <div class="row bg-yellow has-shadow">
+                                                <div class="left-col retirar_borda d-flex align-items-center justify-content-between">
+                                                    <div class="project-title d-flex align-items-center">
+                                                        <div class="text">
+                                                            <small>Mensagem</small>
+                                                            <h3 class="h4">CPF JÁ CADASTRADO!</h3>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </section>
-                        <%}%>
+                                </section>
+                            <%}else{
+                                Cliente c = new Cliente();
+                                c.setNome(nome);
+                                c.setCpf(cpf);
+                                c.setRg(rg);
+                                c.setEmail(email);
+                                c.setTelefone(telefone);
+                                c.setLogradouro(logradouro);
+                                c.setBairro(bairro);
+                                c.setCidade(cidade);
+                                c.setEstado(estado);
+                                c.setCep(cep);
+
+                                Bd.getClientes().put(cpf, c);%>
+                                <section class="projects padding-top no-padding-bottom">
+                                    <div class="container-fluid">
+                                        <div class="project">
+                                            <div class="row bg-yellow has-shadow">
+                                                <div class="left-col retirar_borda d-flex align-items-center justify-content-between">
+                                                    <div class="project-title d-flex align-items-center">
+                                                        <div class="text">
+                                                            <small>Mensagem</small>
+                                                            <h3 class="h4">CADASTRO EFETUADO COM SUCESSO!</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            <%}
+                        }%>
                         <section class="tela">
                             <div class="container-fluid">
                                 <div class="row">

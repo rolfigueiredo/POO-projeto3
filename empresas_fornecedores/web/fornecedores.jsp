@@ -92,7 +92,7 @@
                                 <div class="row">
                                     <div class="chart col-lg-12 col-12">
                                         <div class="bg-white align-items-center justify-content-center has-shadow format-box-forms">
-                                            <%if (Bd.getClientes().size()==0){%>Nenhum cliente cadastrado<%}else{%>
+                                            <%if (Bd.getFornecedores().size()==0){%>Nenhum fornecedor cadastrado<%}else{%>
                                                 <table class="table table-striped">
                                                     <thead>
                                                         <tr>
@@ -111,14 +111,14 @@
                                                         int i=1;
                                                         for (String chave : chaves){
                                                             if(chave != null){
-                                                                Fornecedor c = Bd.getFornecedores().get(chave);%>
+                                                                Fornecedor f = Bd.getFornecedores().get(chave);%>
                                                                 <tr>
                                                                     <td><%=i%></td>
-                                                                    <td><%=c.getNome()%></td>
-                                                                    <td><%=c.getRazaoSocial()%></td>
-                                                                    <td><%=c.getCnpj()%></td>
-                                                                    <td><%=c.getEmail()%></td>
-                                                                    <td><%=c.getTelefone()%></td>
+                                                                    <td><%=f.getNome()%></td>
+                                                                    <td><%=f.getRazaoSocial()%></td>
+                                                                    <td><%=f.getCnpj()%></td>
+                                                                    <td><%=f.getEmail()%></td>
+                                                                    <td><%=f.getTelefone()%></td>
                                                                     <form action="forn-alt.jsp">
                                                                         <input type="hidden" name="cnpj" value="<%=chave%>">
                                                                         <td><input type="submit" name="alterar" value="Alterar"></td>

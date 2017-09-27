@@ -39,37 +39,65 @@
                             String estado = request.getParameter("estado");
                             String cep = request.getParameter("cep");
                             
-                            
-                            Fornecedor f = new Fornecedor();
-                            f.setNome(nome);
-                            f.setRazaoSocial(razao_social);
-                            f.setCnpj(cnpj);
-                            f.setEmail(email);
-                            f.setTelefone(telefone);
-                            f.setLogradouro(logradouro);
-                            f.setBairro(bairro);
-                            f.setCidade(cidade);
-                            f.setEstado(estado);
-                            f.setCep(cep);
-
-                            Bd.getFornecedores().put(cnpj, f);%>
-                            <section class="tela projects padding-top no-padding-bottom">
-                                <div class="container-fluid">
-                                    <div class="project">
-                                        <div class="row bg-yellow has-shadow">
-                                            <div class="left-col retirar_borda d-flex align-items-center justify-content-between">
-                                                <div class="project-title d-flex align-items-center">
-                                                    <div class="text">
-                                                        <small>Mensagem</small>
-                                                        <h3 class="h4">CADASTRO EFETUADO COM SUCESSO!</h3>
+                            Set<String> chaves = Bd.getFornecedores().keySet();
+                            int existe=0;
+                            for (String chave : chaves){
+                                if(chave != null){
+                                    Fornecedor f = Bd.getFornecedores().get(chave);
+                                    if (f.getCnpj().equals(cnpj)){
+                                        existe=1;
+                                    }
+                                }
+                            }
+                            if (existe==1){%>
+                                <section class="projects padding-top no-padding-bottom">
+                                    <div class="container-fluid">
+                                        <div class="project">
+                                            <div class="row bg-yellow has-shadow">
+                                                <div class="left-col retirar_borda d-flex align-items-center justify-content-between">
+                                                    <div class="project-title d-flex align-items-center">
+                                                        <div class="text">
+                                                            <small>Mensagem</small>
+                                                            <h3 class="h4">CNPJ JÁ CADASTRADO!</h3>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </section>
-                        <%}%>
+                                </section>
+                            <%}else{
+                                Fornecedor f = new Fornecedor();
+                                f.setNome(nome);
+                                f.setRazaoSocial(razao_social);
+                                f.setCnpj(cnpj);
+                                f.setEmail(email);
+                                f.setTelefone(telefone);
+                                f.setLogradouro(logradouro);
+                                f.setBairro(bairro);
+                                f.setCidade(cidade);
+                                f.setEstado(estado);
+                                f.setCep(cep);
+
+                                Bd.getFornecedores().put(cnpj, f);%>
+                                <section class="projects padding-top no-padding-bottom">
+                                    <div class="container-fluid">
+                                        <div class="project">
+                                            <div class="row bg-yellow has-shadow">
+                                                <div class="left-col retirar_borda d-flex align-items-center justify-content-between">
+                                                    <div class="project-title d-flex align-items-center">
+                                                        <div class="text">
+                                                            <small>Mensagem</small>
+                                                            <h3 class="h4">CADASTRO EFETUADO COM SUCESSO!</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            <%}
+                        }%>
                         <section class="tela">
                             <div class="container-fluid">
                                 <div class="row">

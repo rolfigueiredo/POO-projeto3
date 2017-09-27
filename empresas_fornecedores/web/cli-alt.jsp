@@ -105,7 +105,7 @@
                                                             <div class="line"></div>
                                                             <div class="form-group row">
                                                                 <div class="col-sm-4 offset-sm-3">
-                                                                    <button type="submit" name="add" class="btn btn-primary">Cadastrar</button>
+                                                                    <button type="submit" name="add" class="btn btn-primary">Alterar</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -125,7 +125,7 @@
                                                 <div class="project-title d-flex align-items-center">
                                                     <div class="text">
                                                         <small>Mensagem</small>
-                                                        <h3 class="h4">CPF NÃO ENCONTRADO1!</h3>
+                                                        <h3 class="h4">CPF NÃO ENCONTRADO!</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -143,7 +143,7 @@
                                             <div class="project-title d-flex align-items-center">
                                                 <div class="text">
                                                     <small>Mensagem</small>
-                                                    <h3 class="h4">CPF NÃO ENCONTRADO2!</h3>
+                                                    <h3 class="h4">CPF NÃO ENCONTRADO!</h3>
                                                 </div>
                                             </div>
                                         </div>
